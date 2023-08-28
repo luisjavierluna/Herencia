@@ -9,6 +9,8 @@ import herencia.EP_1.Animal;
 import herencia.EP_1.Caballo;
 import herencia.EP_1.Gato;
 import herencia.EP_1.Perro;
+import herencia.EP_2.Lavadora;
+import herencia.EP_2.Televisor;
 
 /**
  *
@@ -20,22 +22,17 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Lavadora lavadora = new Lavadora();
+        lavadora.crearLavadora();
+        lavadora.precioFinal();
+        System.out.println(lavadora);
         
-        // Declaración del objeto Perro
-        Animal perro1 = new Perro("Stich", "Humanos", 15, "Doberman");
-        perro1.Alimentarse();
+        System.out.println("--------------------------------");
         
-        // Declaración de otro objeto Perro
-        Animal perro2 = new Perro("Teddy", "Croquetas", 10, "Chihuahua");
-        perro2.Alimentarse();
-        
-        // Declaración del objeto Gato
-        Animal gato1 = new Gato("Pelusa", "Galletas", 15, "Siamés");
-        gato1.Alimentarse();
-        
-        // Declaración del objeto Caballo
-        Animal caballo1 = new Caballo("Spark", "Pasto", 25, "Fino");
-        caballo1.Alimentarse();
+        Televisor tv = new Televisor();
+        tv.crearTelevisor();
+        tv.precioFinal();
+        System.out.println(tv);
         
     }
     
