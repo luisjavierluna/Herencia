@@ -53,7 +53,7 @@ public final class Televisor extends Electrodomestico{
     @Override
     public String toString() {
         return "\nTelevisor: \n"
-                + "Precio: " + precio + "USD \n"
+                + "Precio: " + precio + " USD \n"
                 + "Color: " + color + "\n"
                 + "Consumo Energético: " + consumoEnergetico + "\n"
                 + "Peso: " + peso + "\n"

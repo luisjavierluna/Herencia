@@ -5,12 +5,11 @@
  */
 package herencia;
 
-import herencia.EP_1.Animal;
-import herencia.EP_1.Caballo;
-import herencia.EP_1.Gato;
-import herencia.EP_1.Perro;
+import herencia.EP_2.Electrodomestico;
 import herencia.EP_2.Lavadora;
 import herencia.EP_2.Televisor;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -22,18 +21,45 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Lavadora lavadora = new Lavadora();
-        lavadora.crearLavadora();
-        lavadora.precioFinal();
-        System.out.println(lavadora);
+        ArrayList<Electrodomestico> electrodomesticos = new ArrayList<Electrodomestico>(Arrays.asList(
+                new Lavadora(25, 1000, "negro", 'A', 40d),
+                new Televisor(30, false, 1000, "rojo", 'B', 30d),
+                new Lavadora(70, 1000, "gris", 'C', 80d),
+                new Televisor(60, true, 1000, "azul", 'D', 50d)
+        ));
         
-        System.out.println("--------------------------------");
+        // Mostrar precio de cada electrodomésticos
+        for (Electrodomestico electrodomestico : electrodomesticos) {
+            electrodomestico.precioFinal();
+            
+            System.out.println("-------------------------------");
+            System.out.println(electrodomestico.toString());
+        }
         
-        Televisor tv = new Televisor();
-        tv.crearTelevisor();
-        tv.precioFinal();
-        System.out.println(tv);
+        System.out.println("-------------------------------\n");
         
+        // Mostrar suma de precio de electrodomésticos
+        System.out.println("Costo total: " + electrodomesticos
+                .stream()
+                .mapToDouble(x -> x.getPrecio())
+                .sum() + " USD"
+        );
+        
+        // Mostrar suma de precio de Lavadoras
+        System.out.println("Costo Total Lavadoras: " + electrodomesticos.
+                stream().filter(x -> x instanceof Lavadora)
+                .mapToDouble(x -> x.getPrecio())
+                .sum() + " USD"
+        );
+
+        // Mostrar suma de precio de Televisores
+        System.out.println("Costo Total Televisores: " + electrodomesticos
+                .stream()
+                .filter(x -> x instanceof Televisor)
+                .mapToDouble(x -> x.getPrecio())
+                .sum() + " USD"
+        );
+
     }
     
 }
