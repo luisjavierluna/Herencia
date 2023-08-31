@@ -5,13 +5,10 @@
  */
 package herencia;
 
-import herencia.EE_1.Entidades.Alquiler;
-import herencia.EE_1.Entidades.Barco;
-import herencia.EE_1.Entidades.Motor;
-import herencia.EE_1.Entidades.Velero;
-import herencia.EE_1.Entidades.Yate;
-import herencia.EE_1.Servicios.ServicioAlquiler;
-import java.time.LocalDate;
+import herencia.EE_2.Entidades.Edificio;
+import herencia.EE_2.Entidades.EdificioDeOficinas;
+import herencia.EE_2.Entidades.Polideportivo;
+import herencia.EE_2.Enums.TipoInstalacion;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -25,27 +22,36 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ServicioAlquiler sa = new ServicioAlquiler();
-        
-        ArrayList<Barco> barcos = new ArrayList<>(Arrays.asList(
-                new Velero(100, "111", 10d, LocalDate.of(2000, 1, 1)),
-                new Motor(200, "222", 20d, LocalDate.of(2010, 1, 1)),
-                new Yate(300, 100, "333", 30d, LocalDate.of(2020, 1, 1))        
+        ArrayList<Edificio> edificios = new ArrayList<>(Arrays.asList(
+                new EdificioDeOficinas(2, 20, 2, 2, 3, 4),
+                new EdificioDeOficinas(3, 30, 6, 4, 5, 6),
+                new Polideportivo("Poli 1", TipoInstalacion.ABIERTO, 10, 20, 30),
+                new Polideportivo("Poli 2", TipoInstalacion.TECHADO, 20, 30, 40)
         ));
         
-        ArrayList<Alquiler> alquileres = new ArrayList<>(Arrays.asList(
-                new Alquiler ("Alquiler 1", "AAA", LocalDate.of(2023, 8, 1), LocalDate.of(2023, 9, 20), 1, barcos.get(0)),
-                new Alquiler ("Alquiler 1", "AAA", LocalDate.of(2023, 8, 1), LocalDate.of(2023, 9, 20), 1, barcos.get(1)),
-                new Alquiler ("Alquiler 1", "AAA", LocalDate.of(2023, 8, 1), LocalDate.of(2023, 9, 20), 1, barcos.get(2))
-        ));
+        int abiertos = 0;
+        int techados = 0;
         
-        alquileres.forEach(alquiler -> {
-            System.out.println(
-                sa.calcularAlquiler(alquiler)
-                    + " USD"
-            );
-        });
+        for (Edificio edificio : edificios) {
+            edificio.calcularSuperficie();
+            edificio.calcularVolumen();
+            
+            System.out.println(edificio.toString());
+            if (edificio instanceof Polideportivo) {
 
+                if (((Polideportivo) edificio).getTipoInstalacion() == TipoInstalacion.ABIERTO) {
+                    abiertos++;
+                } else if (((Polideportivo) edificio).getTipoInstalacion() == TipoInstalacion.TECHADO) {
+                    techados++;
+                }
+                
+            } else if (edificio instanceof EdificioDeOficinas) {
+                ((EdificioDeOficinas) edificio).cantPersonas();
+            }
+        }
+
+        System.out.println("\nPolideportivos abiertos: " + abiertos + "\n" + "Polideportivos techados: " + techados);
+        
     }
     
 }
