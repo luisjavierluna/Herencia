@@ -3,12 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/javie/Documents/NetBeansProjects/Herencia/src/herencia/EE_3/Servicios/ServicioAlojamiento.java</file>
+            <file>file:/C:/Users/javie/Documents/NetBeansProjects/Herencia/src/herencia/EE_4/Enums/Seccion.java</file>
             <file>file:/C:/Users/javie/Documents/NetBeansProjects/Herencia/src/herencia/main.java</file>
-            <file>file:/C:/Users/javie/Documents/NetBeansProjects/Herencia/src/herencia/EE_3/Entidades/Residencia.java</file>
-            <file>file:/C:/Users/javie/Documents/NetBeansProjects/Herencia/src/herencia/EE_3/Entidades/Camping.java</file>
-            <file>file:/C:/Users/javie/Documents/NetBeansProjects/Herencia/src/herencia/EE_3/Entidades/Alojamiento.java</file>
-            <file>file:/C:/Users/javie/Documents/NetBeansProjects/Herencia/src/herencia/EE_3/Entidades/Extraotelero.java</file>
+            <file>file:/C:/Users/javie/Documents/NetBeansProjects/Herencia/src/herencia/EE_4/Entidades/Persona.java</file>
+            <file>file:/C:/Users/javie/Documents/NetBeansProjects/Herencia/src/herencia/EE_4/Entidades/Profesor.java</file>
+            <file>file:/C:/Users/javie/Documents/NetBeansProjects/Herencia/src/herencia/EE_4/Entidades/Personal.java</file>
+            <file>file:/C:/Users/javie/Documents/NetBeansProjects/Herencia/src/herencia/EE_4/Entidades/Empleado.java</file>
+            <file>file:/C:/Users/javie/Documents/NetBeansProjects/Herencia/src/herencia/EE_4/Entidades/Estudiante.java</file>
+            <file>file:/C:/Users/javie/Documents/NetBeansProjects/Herencia/src/herencia/EE_4/Enums/Departamento.java</file>
         </group>
     </open-files>
 </project-private>
